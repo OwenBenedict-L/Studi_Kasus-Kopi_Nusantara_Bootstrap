@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Nusantara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="nav-menu">
+        <div class="left-menu">
+            <img src="img/biji-kopi.jpg" alt="Logo">
+            <p>KOPI NUSANTARA</p>
+            <ul class="left-menu-show">
+                <li><a href="#hero-banner">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
+
+        <div class="right-menu">
+            <ul class="right-menu-show">
+                <li><a href="#" id="searching"><i class="fas fa-search"></i></a></li>
+                <li><a href="#" id="shopping-cart"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#"><i class="fas fa-bars fa-2x"></i></a></li>
+            </ul>
+
+            <div class="search-button">
+                <input type="search" id="search-box" placeholder="Cari kopi...">
+            </div>
+        </div>
+    </nav>
+
+    <div class="shopping-cart-button">
+        <h3>Keranjang Saya</h3>
+
+        <div class="content-cart">
+            <p class="message-cart">Tidak ada barang yang dibeli...</p>
+        </div>
+
+        <div class="info-cart">
+            <div class="total-cart">
+                <p class="content-total-cart">Total: <span id="price">Rp 0</span></p>
+            </div>
+
+            <button type="button" class="submit-cart" id="submit-cart">Beli</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- hero banner -->
+        <section id="hero-banner">
+            <div class="background-banner">
+                <img src="img/background-banner.png" alt="Banner">
+                <h1>Welcome To Our Company Profile</h1>
+                <h2>CITA RASA ASLI INDONESIA</h2>
+            </div>
+        </section>
+
+        <!-- menu -->
+        <section id="menu">
+            <h2>Menu Kami</h2>
+            <div class="menu-container">
+                <div class="menu-card">
+                    <img src="img/kopi/tubrukjawa.png" alt="Kopi Tubruk Jawa">
+                    <h3>Kopi Tubruk Jawa</h3>
+                    <p>Kopi hitam ala tradisional, diseduh kasar dengan gula batu secukupnya.</p>
+                    <button type="button" class="menu-price">Rp 15.000</button>
+                </div>
+                <div class="menu-card">
+                    <img src="img/kopi/lampungrobusta.png" alt="Kopi Lampung Robusta">
+                    <h3>Robusta Lampung</h3>
+                    <p>Karakter kuat dan pahit tegas, favorit yang butuh dorongan energi ekstra.</p>
+                    <button type="button" class="menu-price">Rp 18.000</button>
+                </div>
+                <div class="menu-card">
+                    <img src="img/kopi/floresbajawa.png" alt="Kopi Flores Bajawa">
+                    <h3>Flores Bajawa</h3>
+                    <p>Manis alami dengan sentuhan cokelat, tumbuh di lereng Gunung Inerie.</p>
+                    <button type="button" class="menu-price">Rp 23.000</button>
+                </div>
+                <div class="menu-card">
+                    <img src="img/kopi/susugulaaren.png" alt="Kopi Susu Gula Aren">
+                    <h3>Kopi Susu Gula Aren</h3>
+                    <p>Espresso lokal, susu segar, dan gula aren asli. manis pas.</p>
+                    <button type="button" class="menu-price">Rp 19.000</button>
+                </div>
+                <div class="menu-card">
+                    <img src="img/kopi/sulawesi.png" alt="Kopi Kalosi Sulawesi">
+                    <h3>Kalosi Sulawesi</h3>
+                    <p>Full body dengan after taste rempah, cocok diseduh French press.</p>
+                    <button type="button" class="menu-price">Rp 24.000</button>
+                </div>
+                <div class="menu-card">
+                    <img src="img/kopi/vietnamdrip.png" alt="Kopi Vietnam Drip">
+                    <h3>Vietnam Drip</h3>
+                    <p>Kopi pekat menetes pelan, disajikan dengan susu kental manis dingin.</p>
+                    <button type="button" class="menu-price">Rp 20.000</button>
+                </div>
+                <div class="menu-card">
+                    <img src="img/kopi/americanodingin.png" alt="Kopi Americano Dingin">
+                    <h3>Americano Dingin</h3>
+                    <p>Espresso ganda diseduh dengan air dingin, ringan tapi tetap nendang.</p>
+                    <button type="button" class="menu-price">Rp 18.000</button>
+                </div>
+                <div class="menu-card">
+                    <img src="img/kopi/lattepandan.png" alt="Kopi Latte Pandan">
+                    <h3>Latte Pandan</h3>
+                    <p>Sentuhan pandan lokal berpadu dengan susu creamy dan espresso lembut.</p>
+                    <button type="button" class="menu-price">Rp 21.000</button>
+                </div>
+                <div id="pesan-kosong">
+                    Maaf, menu kopi yang Anda cari tidak ditemukan.
+                </div>
+            </div>
+        </section>
+
+        <!-- tentang -->
+        <section id="tentang">
+            <h2>Tentang Kami</h2>
+            <div class="tentang-container">
+                <div class="tentang-img">
+                    <img src="img/LogoKopi.png" class="logo" alt="Tentang1">
+                    <!-- <img src="/img/biji-kopi.jpg" alt="Tentang2"> -->
+                </div>
+                <div class="tentang-text">
+                    <h2>Cerita Kami</h2>
+                    <p>Kopi Nusantara berdiri dari kecintaan pada kopi-kopi single origin Indonesia. 
+                        Kami bekerja sama langsung dengan petani dari Aceh, Toraja, hingga Bali untuk 
+                        menghadirkan biji kopi terbaik yang disangrai segar setiap minggunya di kedai kami.
+                        Selain menjaga kualitas rasa, kami juga berkomitmen mendukung kesejahteraan petani 
+                        lokal dengan sistem perdagangan yang adil. Setiap cangkir yang kami sajikan bukan 
+                        hanya menghadirkan aroma dan cita rasa khas Nusantara, tetapi juga membawa cerita 
+                        perjalanan panjang dari kebun kopi hingga ke meja Anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- kontak -->
+        <section id="kontak">
+            <!-- Alert -->
+            <div id="custom-alert" class="custom-alert">
+            <div class="alert-content">
+                <span class="alert-icon">✔</span>
+                <span class="alert-text">Pesan Anda berhasil terkirim, terima kasih</span>
+            </div>
+                <div class="alert-progress"></div>
+            </div>
+
+            <div class="kontak-img">
+                <!-- <img src="/img/kontak.png" alt="kontak"> -->
+                <form class="kontak-form" id="kontakform">
+                    <div class="kontak-input">
+                        <label>Nama</label>
+                        <input type="text" id="nama" name="nama" maxlength="99" placeholder="Masukkan Nama Anda . . .">
+                    </div>
+
+                    <div class="kontak-input">
+                        <label>Email</label>
+                        <input type="text" id="email" name="email" maxlength="99" placeholder="Masukkan Email Anda . . .">
+                    </div>
+
+                    <div class="kontak-input">
+                        <label>Keperluan</label>
+                        <div class="pembungkus">
+                            <textarea id="keperluan" name="keperluan" maxlength="999" placeholder="Masukkan Keperluan Anda . . ."></textarea>
+                            <span id="char_count">0/999</span>
+                        </div>
+                    </div>
+
+                    <p id="pesan-error"></p>
+
+                    <button type="submit" class="kontak_submit">Submit</button>
+
+                 </form>
+            </div>
+
+            <div class="kontak-info">
+                <h2>Hubungi Kami</h2>
+                <h4>Untuk setiap pertanyaan, pemesanan, maupun kerja sama.</h4>
+                <p><strong>WhatsApp:</strong><a href="#"> 0812-3456-7890</a></p>
+                <p><strong>Email:</strong><a href="#"> kopi_nusantara@gmail.com</a></p>
+                <p><strong>Alamat:</strong><a href="#"> Jl. Letjen S. Parman, Jakarta Barat</a></p>
+            </div>
+        </section>
+
+        <!-- faq -->
+        <section id="faq">
+            <div class="faq-img">
+                <img src="/img/faq.png" alt="faq">
+            </div>
+
+            <div class="faq-judul">
+                <h1>FAQ</h1>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <h3 class="faq-question">Kopi Nusantara itu tempat apa?</h3>
+            <div class="faq-answer">
+                Kopi Nusantara adalah kedai kopi yang berfokus menyajikan kopi <i>single origin</i> terbaik khas Indonesia. 
+                Kami menyangrai sendiri biji kopi segar setiap minggunya yang didapatkan langsung dari petani lokal
+            </div>
+
+            <h3 class="faq-question">Apakah ada batas jumlah tamu di waktu yang bersamaan?</h3>
+            <div class="faq-answer">
+                Ya, demi kenyamanan bersama, kapasitas maksimal di Kopi Nusantara saat ini dibatasi untuk 10 pengunjung 
+                dalam satu waktu.
+            </div>
+
+            <h3 class="faq-question">Bagaimana cara mengajukan kerja sama dengan Kopi Nusantara?</h3>
+            <div class="faq-answer">
+                Kami terbuka untuk berbagai bentuk kolaborasi yang sejalan dengan nilai dan arah pertumbuhan usaha. 
+                Untuk pengajuan kerjasama atau informasi lebih lanjut, silakan menghubungi kami melalui form yang tersedia 
+                dibagian kontak
+            </div>
+
+            <h3 class="faq-question">Apakah bisa memesan dengan menggunakan <i>tumbler</i> atau wadah sendiri?</h3>
+            <div class="faq-answer">
+                Tentu! Kopi Nusantara mendukung program <i>eco-friendly</i>. Anda diperbolehkan membawa <i>tumbler</i> 
+                atau wadah minum sendiri untuk setiap pesanan <i>takeaway</i> maupun <i>dine in</i>
+            </div>
+
+            <h3 class="faq-question">Apakah ada lowogan di Kopi Nusantara?</h3>
+            <div class="faq-answer">
+                Saat ini Kopi Nusantara belum membuka lowongan, tetapi Anda bisa mengirmkan CV anda melalui email 
+                ke <b>lowongan@kopinusantara.id</b>
+            </div>
+        </section>
+    </main>
+    
+    <!-- footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Kopi Nusantara.</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="notif-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
