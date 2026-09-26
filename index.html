@@ -21,8 +21,13 @@
             
             <div class="d-flex align-items-center gap-2 order-lg-2">
                 <!-- Search -->
-                <div class="input-group input-group-sm" style="max-width: 120px;">
-                    <input type="search" class="form-control border-secondary" id="search-box" placeholder="Cari kopi...">
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-dark fs-5" id="search-trigger">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    
+                    <!-- Kotak Input -->
+                    <input type="search" class="form-control form-control-sm border-secondary ms-2 search-input" id="search-box" placeholder="Cari kopi...">
                 </div>
                 
                 <!-- Cart -->
@@ -55,7 +60,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column">
-            <div class="content-cart flex-grow-1 d-flex align-items-center justify-content-center">
+            <div class="content-cart flex-grow-1 d-flex align-items-center justify-content-center overflow-auto px-2">
                 <p class="text-muted message-cart">Tidak ada barang yang dibeli...</p>
             </div>
             <div class="info-cart border-top pt-3">
@@ -133,6 +138,11 @@
             </div>
         </section>
 
+        <!-- Notifikasi -->
+         <section id="notif">
+            <div id="notif-container"></div>
+         </section>
+
         <!-- Tentang Kami -->
         <section id="tentang" class="py-5">
             <div class="container">
@@ -191,6 +201,16 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="notif-form">
+            <div class="custom-alert" id="custom-alert">
+                <div class="alert-content">
+                    <div class="alert-icon"><i class="fas fa-check"></i></div>
+                    <span>Pesan Anda berhasil dikirim!</span>
+                </div>
+                <div class="alert-progress"></div>
             </div>
         </section>
 

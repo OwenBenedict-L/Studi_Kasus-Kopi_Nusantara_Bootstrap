@@ -17,6 +17,24 @@ html {
     letter-spacing: 2px;
 }
 
+/* Search Button */
+.search-input {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+.search-input.active {
+    width: 150px; 
+    padding: 0.25rem 0.5rem; 
+    opacity: 1;
+    visibility: visible;
+    border: 1px solid #6c757d; 
+}
+
 /* Menu Card */
 .card {
     transition: background-color 0.3s ease;
@@ -134,8 +152,8 @@ html {
 /* Notifications & Alerts */
 #notif-container {
     position: fixed;
-    bottom: 5%;
-    right: 3%;
+    bottom: 15%;
+    right: 2%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -163,8 +181,8 @@ html {
 
 .custom-alert {
     position: fixed;
-    top: 25px;
-    right: 25px;
+    top: 12%;
+    right: 2%;
     background-color: #2b2b2b;
     color: #ffffff;
     padding: 16px 22px;

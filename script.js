@@ -47,9 +47,11 @@ $(document).ready(function(){
 
         if (cart.length === 0) {
             $cartContainer.html('<p class="text-muted message-cart">Tidak ada barang yang dibeli...</p>');
-            $cartContainer.addClass('justify-content-center flex-column'); // utility bootstrap
+            $cartContainer.addClass('justify-content-center align-items-center flex-column');
         } else {
-            $cartContainer.removeClass('justify-content-center flex-column');$.each(cart, function(index, item) {
+            $cartContainer.removeClass('justify-content-center flex-column');
+            $cartContainer.addClass('flex-column');
+            $.each(cart, function(index, item) {
                 const itemSubtotal = item.price * item.quantity;
                 total += itemSubtotal;
 
@@ -121,6 +123,19 @@ $(document).ready(function(){
     });
 
     /* Seacrh */
+    $('#search-trigger').on('click', function(e) {
+        e.preventDefault(); 
+        const $searchBox = $('#search-box');
+        
+        $searchBox.toggleClass('active');
+        
+        if ($searchBox.hasClass('active')) {
+            setTimeout(() => $searchBox.focus(), 400); 
+        } else {
+            $searchBox.val('').trigger('input'); 
+        }
+    });
+
     $('#search-box').on('input', function() {
         let kataKunci = $(this).val().toLowerCase();
         let jumlahCocok = 0;
