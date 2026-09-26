@@ -1,12 +1,7 @@
-// Nav menu
-$('.fas.fa-bars.fa-2x').on('click', () => {
-    $('.left-menu-show').toggleClass('show');
-});
-
-// Shop cart
 $(document).ready(function(){
     let cart = [];
 
+    /* Notification */
     function showNotif(message) {
         const $notification =$('<div class="notif-message"></div>').text(message);
         $('#notif-container').append($notification);
@@ -18,17 +13,12 @@ $(document).ready(function(){
         }, 2500);
     }
 
-    $('#shopping-cart').on('click', (e) => {
-        e.preventDefault();
-        $('.shopping-cart-button').toggleClass('active');
-        $('.search-button').removeClass('active');
-    });
-
+    /* Shop Cart*/
     $('.menu-price').on('click', (e) => {
-        const $price = $(e.currentTarget);
-        const $card = $price.closest('.menu-card');
-
-        const name = $card.find('h3').text();
+        const $price =$(e.currentTarget);
+        const $card =$price.closest('.card-body');
+        const name = $card.find('.card-title').text(); 
+        
         const priceText = $price.text();
         const price = parseInt(priceText.replace(/[^\d]/g, ''));
 
@@ -36,8 +26,7 @@ $(document).ready(function(){
 
         if (existingItem) {
             existingItem.quantity += 1;
-        }
-        else {
+        } else {
             cart.push({
                 name: name,
                 price: price,
@@ -46,28 +35,28 @@ $(document).ready(function(){
         }
 
         updateCart();
-        $('#shopping-cart').addClass('active');
         showNotif(`${name} berhasil ditambahkan!`);
     });
 
     function updateCart() {
-        const $cartContainer = $('.content-cart');
-        const $totalPrice = $('#price');
+        const $cartContainer =$('.content-cart');
+        const $totalPrice =$('#price');
 
         $cartContainer.empty();
         let total = 0;
 
         if (cart.length === 0) {
-            $cartContainer.html('<p class="message-cart">Tidak ada barang yang dibeli...</p>');
+            $cartContainer.html('<p class="text-muted message-cart">Tidak ada barang yang dibeli...</p>');
+            $cartContainer.addClass('justify-content-center flex-column'); // utility bootstrap
         } else {
-            $.each(cart, function(index, item) {
+            $cartContainer.removeClass('justify-content-center flex-column');$.each(cart, function(index, item) {
                 const itemSubtotal = item.price * item.quantity;
                 total += itemSubtotal;
 
                 const itemHTML = `
-                    <div class="cart-item">
+                    <div class="cart-item w-100">
                         <div class="item-info">
-                            <p>${item.name}</p>
+                            <p class="mb-0 text-dark">${item.name}</p>
                             <span>Rp ${itemSubtotal.toLocaleString('id-ID')}</span>
                         </div>
                         <div class="qty-controls">
@@ -109,13 +98,11 @@ $(document).ready(function(){
             return;
         }
 
-        if (!$btn.hasClass('confirm-mode')) {
-            $btn.addClass('confirm-mode');
-            $btn.text('Yakin beli sekarang?');
+        if (!$btn.hasClass('confirm-mode')) {$btn.addClass('confirm-mode');
+            $btn.text('Yakin beli sekarang?');$btn.removeClass('btn-dark').addClass('btn-danger');
 
             setTimeout(() => {
-                $btn.removeClass('confirm-mode');
-                $btn.text('Beli');
+                $btn.removeClass('confirm-mode btn-danger').addClass('btn-dark');$btn.text('Beli');
             }, 3000);
 
             return;
@@ -124,43 +111,38 @@ $(document).ready(function(){
         showNotif('Terima kasih telah berbelanja di Kopi Nusantara!');
         cart = [];
         updateCart();
-        $('.shopping-cart-button').removeClass('active');
 
-        $btn.removeClass('confirm-mode');
-        $btn.text('Beli');
+        const cartOffcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('cartOffcanvas'));
+        if(cartOffcanvas) {
+            cartOffcanvas.hide();
+        }
+
+        $btn.removeClass('confirm-mode btn-danger').addClass('btn-dark');$btn.text('Beli');
     });
-});
 
-/* search button */
-$('#searching').on('click', function(e) {
-    e.preventDefault(); 
-    $('.search-button').toggleClass('active');
-    $('#search-box').focus();
-});
+    /* Seacrh */
+    $('#search-box').on('input', function() {
+        let kataKunci = $(this).val().toLowerCase();
+        let jumlahCocok = 0;
+            
+        $('#menu .row > div').each(function() {
+            let namaKopi = $(this).find('.card-title').text().toLowerCase();    
+            if (namaKopi.includes(kataKunci)) {
+                $(this).show();
+                jumlahCocok++;
+            } else {
+                $(this).hide(); 
+            }
+        });
 
-$('#search-box').on('input', function() {
-    let kataKunci = $(this).val().toLowerCase();
-    let jumlahCocok = 0;
-        
-    $('.menu-card').each(function() {
-        let namaKopi = $(this).find('h3').text().toLowerCase();    
-        if (namaKopi.includes(kataKunci)) {
-            $(this).show();
-            jumlahCocok++;
+        if (jumlahCocok === 0) {
+            $('#pesan-kosong').removeClass('d-none');
         } else {
-            $(this).hide(); 
+            $('#pesan-kosong').addClass('d-none'); 
         }
     });
 
-    if (jumlahCocok === 0) {
-        $('#pesan-kosong').show(); 
-    } else {
-        $('#pesan-kosong').hide(); 
-    }
-});
-
-// SCRIPT KONTAK
-$(document).ready(function() {
+    /* Form kontak */
     const maxChars = 999;
 
     $('#keperluan').on('input', function() {
@@ -174,21 +156,17 @@ $(document).ready(function() {
         const nama = $('#nama').val().trim();
         const email = $('#email').val().trim();
         const keperluan = $('#keperluan').val().trim();
-        const $pesanError = $('#pesan-error');
-
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (nama === '' || email === '' || keperluan === '') {
-            $pesanError.text('Data anda tidak lengkap, silahkan isi berlebih dahulu!').show();
+            alert('Data anda tidak lengkap, silahkan isi terlebih dahulu!');
             return;
         }
 
         if (!emailRegex.test(email)) {
-            $pesanError.text('Format email tidak valid! Harap masukkan format yang benar (contoh: nama@email.com).').show();
+            alert('Format email tidak valid! Harap masukkan format yang benar.');
             return;
         }
-
-        $pesanError.hide();
 
         const $alert =$('#custom-alert');
         $alert.addClass('active').fadeIn(300);
@@ -197,14 +175,20 @@ $(document).ready(function() {
             });
         }, 4000);
 
-        $(this).trigger('reset');$('#char-count').text(`0/${maxChars}`);
+        $(this).trigger('reset');$('#char_count').text(`0/${maxChars}`);
     });
 });
 
-/* FAQ */
-$('.faq-question').on('click', function () {
-            $(this).next('.faq-answer').slideToggle();
-            $(this).toggleClass('open');
-            $('.faq-answer').not($(this).next()).slideUp();
-            $('.faq-question').not($(this)).removeClass('open');
+/* Tombol ke atas */
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+        $('#btn-back-to-top').fadeIn();
+    } else {
+        $('#btn-back-to-top').fadeOut();
+    }
+});
+
+$('#btn-back-to-top').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 500);
+    return false;
 });
