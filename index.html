@@ -9,245 +9,268 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- navigation -->
-    <nav class="nav-menu">
-        <div class="left-menu">
-            <img src="img/biji-kopi.jpg" alt="Logo">
-            <p>KOPI NUSANTARA</p>
-            <ul class="left-menu-show">
-                <li><a href="#hero-banner">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-        </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg shadow-sm sticky-top py-2" style="background-color: #f6eede;">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center fw-bold me-auto" href="#">
+                <img src="img/biji-kopi.jpg" alt="Logo" width="35" height="35" class="me-2 rounded-circle object-fit-cover">
+                <span class="d-none d-sm-inline-block fs-6">KOPI NUSANTARA</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-2 order-lg-2">
+                <!-- Search -->
+                <div class="input-group input-group-sm" style="max-width: 120px;">
+                    <input type="search" class="form-control border-secondary" id="search-box" placeholder="Cari kopi...">
+                </div>
+                
+                <!-- Cart -->
+                <a href="#" class="text-dark fs-5 ms-1" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                
+                <!-- Toggler -->
+                <button class="navbar-toggler ms-2 px-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="width: 1.2em; height: 1.2em;"></span>
+                </button>
+            </div>
 
-        <div class="right-menu">
-            <ul class="right-menu-show">
-                <li><a href="#" id="searching"><i class="fas fa-search"></i></a></li>
-                <li><a href="#" id="shopping-cart"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-bars fa-2x"></i></a></li>
-            </ul>
-
-            <div class="search-button">
-                <input type="search" id="search-box" placeholder="Cari kopi...">
+            <!-- Menu Link Collapse -->
+            <div class="collapse navbar-collapse order-lg-1" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium text-center">
+                    <li class="nav-item"><a class="nav-link text-dark" href="#hero-banner">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#kontak">Kontak</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <div class="shopping-cart-button">
-        <h3>Keranjang Saya</h3>
-
-        <div class="content-cart">
-            <p class="message-cart">Tidak ada barang yang dibeli...</p>
+    <!-- Shopping Cart -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="cartOffcanvasLabel">Keranjang Saya</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-
-        <div class="info-cart">
-            <div class="total-cart">
-                <p class="content-total-cart">Total: <span id="price">Rp 0</span></p>
+        <div class="offcanvas-body d-flex flex-column">
+            <div class="content-cart flex-grow-1 d-flex align-items-center justify-content-center">
+                <p class="text-muted message-cart">Tidak ada barang yang dibeli...</p>
             </div>
-
-            <button type="button" class="submit-cart" id="submit-cart">Beli</button>
+            <div class="info-cart border-top pt-3">
+                <div class="d-flex justify-content-between fw-bold mb-3">
+                    <span>Total:</span>
+                    <span id="price">Rp 0</span>
+                </div>
+                <button type="button" class="btn btn-dark w-100" id="submit-cart">Beli</button>
+            </div>
         </div>
     </div>
 
     <main>
-        <!-- hero banner -->
-        <section id="hero-banner">
-            <div class="background-banner">
-                <img src="img/background-banner.png" alt="Banner">
-                <h1>Welcome To Our Company Profile</h1>
-                <h2>CITA RASA ASLI INDONESIA</h2>
+        <!-- Hero Banner -->
+        <section id="hero-banner" class="position-relative d-flex align-items-center justify-content-center text-center text-white" style="height: 80vh; background: url('img/background-banner.png') center/cover no-repeat;">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: 0.6;"></div>
+            <div class="position-relative z-1 px-3">
+                <h1 class="display-4 fw-bold mb-3">Welcome To Our Company Profile</h1>
+                <h2 class="h3 fw-light">CITA RASA ASLI INDONESIA</h2>
             </div>
         </section>
 
-        <!-- menu -->
-        <section id="menu">
-            <h2>Menu Kami</h2>
-            <div class="menu-container">
-                <div class="menu-card">
-                    <img src="img/kopi/tubrukjawa.png" alt="Kopi Tubruk Jawa">
-                    <h3>Kopi Tubruk Jawa</h3>
-                    <p>Kopi hitam ala tradisional, diseduh kasar dengan gula batu secukupnya.</p>
-                    <button type="button" class="menu-price">Rp 15.000</button>
-                </div>
-                <div class="menu-card">
-                    <img src="img/kopi/lampungrobusta.png" alt="Kopi Lampung Robusta">
-                    <h3>Robusta Lampung</h3>
-                    <p>Karakter kuat dan pahit tegas, favorit yang butuh dorongan energi ekstra.</p>
-                    <button type="button" class="menu-price">Rp 18.000</button>
-                </div>
-                <div class="menu-card">
-                    <img src="img/kopi/floresbajawa.png" alt="Kopi Flores Bajawa">
-                    <h3>Flores Bajawa</h3>
-                    <p>Manis alami dengan sentuhan cokelat, tumbuh di lereng Gunung Inerie.</p>
-                    <button type="button" class="menu-price">Rp 23.000</button>
-                </div>
-                <div class="menu-card">
-                    <img src="img/kopi/susugulaaren.png" alt="Kopi Susu Gula Aren">
-                    <h3>Kopi Susu Gula Aren</h3>
-                    <p>Espresso lokal, susu segar, dan gula aren asli. manis pas.</p>
-                    <button type="button" class="menu-price">Rp 19.000</button>
-                </div>
-                <div class="menu-card">
-                    <img src="img/kopi/sulawesi.png" alt="Kopi Kalosi Sulawesi">
-                    <h3>Kalosi Sulawesi</h3>
-                    <p>Full body dengan after taste rempah, cocok diseduh French press.</p>
-                    <button type="button" class="menu-price">Rp 24.000</button>
-                </div>
-                <div class="menu-card">
-                    <img src="img/kopi/vietnamdrip.png" alt="Kopi Vietnam Drip">
-                    <h3>Vietnam Drip</h3>
-                    <p>Kopi pekat menetes pelan, disajikan dengan susu kental manis dingin.</p>
-                    <button type="button" class="menu-price">Rp 20.000</button>
-                </div>
-                <div class="menu-card">
-                    <img src="img/kopi/americanodingin.png" alt="Kopi Americano Dingin">
-                    <h3>Americano Dingin</h3>
-                    <p>Espresso ganda diseduh dengan air dingin, ringan tapi tetap nendang.</p>
-                    <button type="button" class="menu-price">Rp 18.000</button>
-                </div>
-                <div class="menu-card">
-                    <img src="img/kopi/lattepandan.png" alt="Kopi Latte Pandan">
-                    <h3>Latte Pandan</h3>
-                    <p>Sentuhan pandan lokal berpadu dengan susu creamy dan espresso lembut.</p>
-                    <button type="button" class="menu-price">Rp 21.000</button>
-                </div>
-                <div id="pesan-kosong">
-                    Maaf, menu kopi yang Anda cari tidak ditemukan.
-                </div>
-            </div>
-        </section>
-
-        <!-- tentang -->
-        <section id="tentang">
-            <h2>Tentang Kami</h2>
-            <div class="tentang-container">
-                <div class="tentang-img">
-                    <img src="img/LogoKopi.png" class="logo" alt="Tentang1">
-                    <!-- <img src="/img/biji-kopi.jpg" alt="Tentang2"> -->
-                </div>
-                <div class="tentang-text">
-                    <h2>Cerita Kami</h2>
-                    <p>Kopi Nusantara berdiri dari kecintaan pada kopi-kopi single origin Indonesia. 
-                        Kami bekerja sama langsung dengan petani dari Aceh, Toraja, hingga Bali untuk 
-                        menghadirkan biji kopi terbaik yang disangrai segar setiap minggunya di kedai kami.
-                        Selain menjaga kualitas rasa, kami juga berkomitmen mendukung kesejahteraan petani 
-                        lokal dengan sistem perdagangan yang adil. Setiap cangkir yang kami sajikan bukan 
-                        hanya menghadirkan aroma dan cita rasa khas Nusantara, tetapi juga membawa cerita 
-                        perjalanan panjang dari kebun kopi hingga ke meja Anda.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- kontak -->
-        <section id="kontak">
-            <!-- Alert -->
-            <div id="custom-alert" class="custom-alert">
-            <div class="alert-content">
-                <span class="alert-icon">✔</span>
-                <span class="alert-text">Pesan Anda berhasil terkirim, terima kasih</span>
-            </div>
-                <div class="alert-progress"></div>
-            </div>
-
-            <div class="kontak-img">
-                <!-- <img src="/img/kontak.png" alt="kontak"> -->
-                <form class="kontak-form" id="kontakform">
-                    <div class="kontak-input">
-                        <label>Nama</label>
-                        <input type="text" id="nama" name="nama" maxlength="99" placeholder="Masukkan Nama Anda . . .">
-                    </div>
-
-                    <div class="kontak-input">
-                        <label>Email</label>
-                        <input type="text" id="email" name="email" maxlength="99" placeholder="Masukkan Email Anda . . .">
-                    </div>
-
-                    <div class="kontak-input">
-                        <label>Keperluan</label>
-                        <div class="pembungkus">
-                            <textarea id="keperluan" name="keperluan" maxlength="999" placeholder="Masukkan Keperluan Anda . . ."></textarea>
-                            <span id="char_count">0/999</span>
+        <!-- Menu -->
+        <section id="menu" class="container py-5">
+            <h2 class="text-center fw-bold mb-5">Menu Kami</h2>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/kopi/tubrukjawa.png" class="card-img-top bg-light object-fit-contain" alt="Kopi Tubruk Jawa" style="height: 200px;">
+                        <div class="card-body d-flex flex-column text-center">
+                            <h5 class="card-title h6 fw-bold">Kopi Tubruk Jawa</h5>
+                            <p class="card-text text-muted small flex-grow-1">Kopi hitam ala tradisional, diseduh kasar dengan gula batu secukupnya.</p>
+                            <button type="button" class="menu-price w-100 mt-2">Rp 15.000</button>
                         </div>
                     </div>
-
-                    <p id="pesan-error"></p>
-
-                    <button type="submit" class="kontak_submit">Submit</button>
-
-                 </form>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/kopi/lampungrobusta.png" class="card-img-top bg-light object-fit-contain" alt="Kopi Lampung Robusta" style="height: 200px;">
+                        <div class="card-body d-flex flex-column text-center">
+                            <h5 class="card-title h6 fw-bold">Robusta Lampung</h5>
+                            <p class="card-text text-muted small flex-grow-1">Karakter kuat dan pahit tegas, favorit yang butuh dorongan energi ekstra.</p>
+                            <button type="button" class="menu-price w-100 mt-2">Rp 18.000</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/kopi/floresbajawa.png" class="card-img-top bg-light object-fit-contain" alt="Kopi Flores Bajawa" style="height: 200px;">
+                        <div class="card-body d-flex flex-column text-center">
+                            <h5 class="card-title h6 fw-bold">Flores Bajawa</h5>
+                            <p class="card-text text-muted small flex-grow-1">Manis alami dengan sentuhan cokelat, tumbuh di lereng Gunung Inerie.</p>
+                            <button type="button" class="menu-price w-100 mt-2">Rp 23.000</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/kopi/susugulaaren.png" class="card-img-top bg-light object-fit-contain" alt="Kopi Susu Gula Aren" style="height: 200px;">
+                        <div class="card-body d-flex flex-column text-center">
+                            <h5 class="card-title h6 fw-bold">Kopi Susu Gula Aren</h5>
+                            <p class="card-text text-muted small flex-grow-1">Espresso lokal, susu segar, dan gula aren asli. manis pas.</p>
+                            <button type="button" class="menu-price w-100 mt-2">Rp 19.000</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="kontak-info">
-                <h2>Hubungi Kami</h2>
-                <h4>Untuk setiap pertanyaan, pemesanan, maupun kerja sama.</h4>
-                <p><strong>WhatsApp:</strong><a href="#"> 0812-3456-7890</a></p>
-                <p><strong>Email:</strong><a href="#"> kopi_nusantara@gmail.com</a></p>
-                <p><strong>Alamat:</strong><a href="#"> Jl. Letjen S. Parman, Jakarta Barat</a></p>
+            
+            <div id="pesan-kosong" class="alert alert-warning text-center mt-4 d-none" role="alert">
+                Maaf, menu kopi yang Anda cari tidak ditemukan.
             </div>
         </section>
 
-        <!-- faq -->
-        <section id="faq">
-            <div class="faq-img">
-                <img src="/img/faq.png" alt="faq">
+        <!-- Tentang Kami -->
+        <section id="tentang" class="py-5">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5">Tentang Kami</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center mb-4 mb-md-0">
+                        <img src="img/LogoKopi.png" class="img-fluid rounded shadow-sm" alt="Logo Kopi Nusantara">
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="fw-bold mb-3">Cerita Kami</h3>
+                        <p class="text-secondary lh-lg">
+                            Kopi Nusantara berdiri dari kecintaan pada kopi-kopi single origin Indonesia. Kami bekerja sama langsung dengan petani dari Aceh, Toraja, hingga Bali untuk menghadirkan biji kopi terbaik yang disangrai segar setiap minggunya di kedai kami. 
+                        </p>
+                        <p class="text-secondary lh-lg">
+                            Selain menjaga kualitas rasa, kami juga berkomitmen mendukung kesejahteraan petani lokal dengan sistem perdagangan yang adil. Setiap cangkir yang kami sajikan bukan hanya menghadirkan aroma dan cita rasa khas Nusantara, tetapi juga membawa cerita perjalanan panjang dari kebun kopi hingga ke meja Anda.
+                        </p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="faq-judul">
-                <h1>FAQ</h1>
-                <h2>Frequently Asked Questions</h2>
+        <!-- Kontak -->
+        <section id="kontak" class="container py-5">
+            <h2 class="text-center fw-bold mb-5">Kontak & Hubungi Kami</h2>
+            <div class="row g-5">
+                <!-- Form -->
+                <div class="col-md-7">
+                    <div class="card shadow-sm border-0 p-4">
+                        <form id="kontakform">
+                            <div class="mb-3">
+                                <label for="nama" class="form-label fw-semibold">Nama</label>
+                                <input type="text" class="form-control" id="nama" name="nama" maxlength="99" placeholder="Masukkan Nama Anda...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" maxlength="99" placeholder="Masukkan Email Anda...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="keperluan" class="form-label fw-semibold">Keperluan</label>
+                                <textarea class="form-control" id="keperluan" name="keperluan" rows="4" maxlength="999" placeholder="Masukkan Keperluan Anda..."></textarea>
+                                <div class="form-text text-end" id="char_count">0/999</div>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100 py-2 fw-bold">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Info -->
+                <div class="col-md-5">
+                    <div class="p-4 shadow-sm border-0 rounded h-100">
+                        <h4 class="fw-bold mb-3">Informasi Kontak</h4>
+                        <p class="text-secondary mb-4">Untuk setiap pertanyaan, pemesanan, maupun kerja sama.</p>
+                        <ul class="list-unstyled text-secondary lh-lg">
+                            <li class="mb-3"><i class="fab fa-whatsapp me-3 fs-5 text-success"></i> <a href="#" class="text-decoration-none text-dark">0812-3456-7890</a></li>
+                            <li class="mb-3"><i class="fas fa-envelope me-3 fs-5 text-danger"></i> <a href="#" class="text-decoration-none text-dark">kopi_nusantara@gmail.com</a></li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt me-3 fs-5 text-primary"></i> <a href="#" class="text-decoration-none text-dark">Jl. Letjen S. Parman, Jakarta Barat</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <h3 class="faq-question">Kopi Nusantara itu tempat apa?</h3>
-            <div class="faq-answer">
-                Kopi Nusantara adalah kedai kopi yang berfokus menyajikan kopi <i>single origin</i> terbaik khas Indonesia. 
-                Kami menyangrai sendiri biji kopi segar setiap minggunya yang didapatkan langsung dari petani lokal
-            </div>
+        <!-- FAQ -->
+        <section id="faq" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bold">FAQ</h1>
+                    <h2 class="h5 text-secondary">Frequently Asked Questions</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion shadow-sm" id="accordionFAQ">
+                            
+                            <!-- Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        Kopi Nusantara itu tempat apa?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body text-secondary">
+                                        Kopi Nusantara adalah kedai kopi yang berfokus menyajikan kopi <i>single origin</i> terbaik khas Indonesia. Kami menyangrai sendiri biji kopi segar setiap minggunya yang didapatkan langsung dari petani lokal.
+                                    </div>
+                                </div>
+                            </div>
 
-            <h3 class="faq-question">Apakah ada batas jumlah tamu di waktu yang bersamaan?</h3>
-            <div class="faq-answer">
-                Ya, demi kenyamanan bersama, kapasitas maksimal di Kopi Nusantara saat ini dibatasi untuk 10 pengunjung 
-                dalam satu waktu.
-            </div>
+                            <!-- Item 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Apakah ada batas jumlah tamu di waktu yang bersamaan?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body text-secondary">
+                                        Ya, demi kenyamanan bersama, kapasitas maksimal di Kopi Nusantara saat ini dibatasi untuk 10 pengunjung dalam satu waktu.
+                                    </div>
+                                </div>
+                            </div>
 
-            <h3 class="faq-question">Bagaimana cara mengajukan kerja sama dengan Kopi Nusantara?</h3>
-            <div class="faq-answer">
-                Kami terbuka untuk berbagai bentuk kolaborasi yang sejalan dengan nilai dan arah pertumbuhan usaha. 
-                Untuk pengajuan kerjasama atau informasi lebih lanjut, silakan menghubungi kami melalui form yang tersedia 
-                dibagian kontak
-            </div>
+                            <!-- Item 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        Bagaimana cara mengajukan kerja sama dengan Kopi Nusantara?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body text-secondary">
+                                        Kami terbuka untuk berbagai bentuk kolaborasi yang sejalan dengan nilai dan arah pertumbuhan usaha. Untuk pengajuan kerjasama atau informasi lebih lanjut, silakan menghubungi kami melalui form yang tersedia di bagian kontak.
+                                    </div>
+                                </div>
+                            </div>
 
-            <h3 class="faq-question">Apakah bisa memesan dengan menggunakan <i>tumbler</i> atau wadah sendiri?</h3>
-            <div class="faq-answer">
-                Tentu! Kopi Nusantara mendukung program <i>eco-friendly</i>. Anda diperbolehkan membawa <i>tumbler</i> 
-                atau wadah minum sendiri untuk setiap pesanan <i>takeaway</i> maupun <i>dine in</i>
-            </div>
-
-            <h3 class="faq-question">Apakah ada lowogan di Kopi Nusantara?</h3>
-            <div class="faq-answer">
-                Saat ini Kopi Nusantara belum membuka lowongan, tetapi Anda bisa mengirmkan CV anda melalui email 
-                ke <b>lowongan@kopinusantara.id</b>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     
-    <!-- footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Kopi Nusantara.</p>
-            <div class="social-media">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p class="mb-2 mb-md-0">&copy; 2026 Kopi Nusantara.</p>
+            <div class="d-flex gap-3">
+                <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white fs-5"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
+        <button id="btn-back-to-top" class="btn rounded-circle position-fixed shadow d-flex align-items-center justify-content-center" style="bottom: 20px; right: 20px; width: 45px; height: 45px; display: none; z-index: 1000; background-color: #7a4a2b; color: white; border: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </footer>
 
-    <div id="notif-container"></div>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>
