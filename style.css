@@ -1,6 +1,12 @@
 /* All */
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-margin-top: 75px;
+}
 body {
-    background-color: #f6eede !important;
+    background-color: #f6eede;
 }
 
 html {
@@ -36,13 +42,9 @@ html {
 }
 
 /* Menu Card */
-.card {
+.kontak {
     transition: background-color 0.3s ease;
     background-color: #fff9f371;
-}
-
-.card:hover {
-    background-color: #e6d5b8 !important;
 }
 
 .menu-price {
@@ -64,6 +66,35 @@ html {
 
 .menu-price:active {
     transform: scale(0.95);
+}
+
+#kontakform .form-control:focus {
+    border-color: #4a2c11;
+    box-shadow: 0 0 0 0.1rem rgba(74, 44, 17, 0.25);
+}
+
+.btn-kopi {
+    background-color: #7a4a2b;
+    border-color: #7a4a2b;
+    color: #ffffff;
+}
+
+.btn-kopi:hover,
+.btn-kopi:focus {
+    background-color: #7a4a2b;
+    border-color: #7a4a2b;
+    color: #ffffff ;
+}
+
+#keperluan {
+    resize: none; 
+}
+
+.char-badge {
+    pointer-events: none;
+    font-size: 0.75rem;
+    color: #6c757d;
+    user-select: none;
 }
 
 /* Shopping Cart */
@@ -147,6 +178,10 @@ html {
     letter-spacing: 2px;
     font-style: italic;
     color: #3d2607;
+}
+
+footer {
+    background-color: #3d250f;;
 }
 
 /* Notifications & Alerts */

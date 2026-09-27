@@ -171,33 +171,55 @@
                 <!-- Form -->
                 <div class="col-md-7">
                     <div class="card shadow-sm border-0 p-4">
+                        
                         <form id="kontakform">
                             <div class="mb-3">
                                 <label for="nama" class="form-label fw-semibold">Nama</label>
                                 <input type="text" class="form-control" id="nama" name="nama" maxlength="99" placeholder="Masukkan Nama Anda...">
                             </div>
+
                             <div class="mb-3">
                                 <label for="email" class="form-label fw-semibold">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" maxlength="99" placeholder="Masukkan Email Anda...">
                             </div>
+
                             <div class="mb-3">
                                 <label for="keperluan" class="form-label fw-semibold">Keperluan</label>
-                                <textarea class="form-control" id="keperluan" name="keperluan" rows="4" maxlength="999" placeholder="Masukkan Keperluan Anda..."></textarea>
-                                <div class="form-text text-end" id="char_count">0/999</div>
+                            <div class="position-relative">
+                                    <textarea class="form-control pb-4" id="keperluan" name="keperluan" rows="4" maxlength="999" placeholder="Masukkan Keperluan Anda..."></textarea>
+                                    <span class="char-badge position-absolute bottom-0 end-0 me-3 mb-2 small text-muted pe-none" id="char_count">
+                                        0/999
+                                    </span>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-dark w-100 py-2 fw-bold">Kirim Pesan</button>
+
+                            <button type="submit" class="btn btn-kopi w-100 py-2 fw-bold">Kirim Pesan</button>
                         </form>
                     </div>
                 </div>
+
                 <!-- Info -->
                 <div class="col-md-5">
-                    <div class="p-4 shadow-sm border-0 rounded h-100">
-                        <h4 class="fw-bold mb-3">Informasi Kontak</h4>
-                        <p class="text-secondary mb-4">Untuk setiap pertanyaan, pemesanan, maupun kerja sama.</p>
-                        <ul class="list-unstyled text-secondary lh-lg">
-                            <li class="mb-3"><i class="fab fa-whatsapp me-3 fs-5 text-success"></i> <a href="#" class="text-decoration-none text-dark">0812-3456-7890</a></li>
-                            <li class="mb-3"><i class="fas fa-envelope me-3 fs-5 text-danger"></i> <a href="#" class="text-decoration-none text-dark">kopi_nusantara@gmail.com</a></li>
-                            <li class="mb-3"><i class="fas fa-map-marker-alt me-3 fs-5 text-primary"></i> <a href="#" class="text-decoration-none text-dark">Jl. Letjen S. Parman, Jakarta Barat</a></li>
+                    <div class="p-4 p-lg-5 rounded-3 h-100 shadow-sm" style="background-color: #dacfb8;">
+                        <h2 class="fw-bold mb-1" style="color: #4a2c11;">Hubungi Kami</h2>
+                        <p class="fst-italic text-dark mb-3">Untuk setiap pertanyaan, pemesanan, maupun kerja sama.</p>
+                        <hr class="border-dark border-2 opacity-100 mt-1 mb-4">
+                        <ul class="list-unstyled text-dark lh-lg mb-0 fs-6">
+                            <li class="mb-2">
+                                <i class="fab fa-whatsapp me-2 text-dark"></i>
+                                <strong style="color: #4a2c11;">WhatsApp:</strong> 
+                                <a href="https://wa.me/6281234567890" target="_blank" class="text-decoration-none text-dark ms-1">0812-3456-7890</a>
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-envelope me-2 text-dark"></i>
+                                <strong style="color: #4a2c11;">Email:</strong> 
+                                <a href="mailto:kopi_nusantara@gmail.com" class="text-decoration-none text-dark ms-1">kopi_nusantara@gmail.com</a>
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-map-marker-alt me-2 text-dark"></i>
+                                <strong style="color: #4a2c11;">Alamat:</strong> 
+                                <span class="ms-1">Jl. Letjen S. Parman, Jakarta Barat</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -228,11 +250,11 @@
                             <!-- Item 1 -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                                         Kopi Nusantara itu tempat apa?
                                     </button>
                                 </h2>
-                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
                                     <div class="accordion-body text-secondary">
                                         Kopi Nusantara adalah kedai kopi yang berfokus menyajikan kopi <i>single origin</i> terbaik khas Indonesia. Kami menyangrai sendiri biji kopi segar setiap minggunya yang didapatkan langsung dari petani lokal.
                                     </div>
@@ -262,11 +284,10 @@
                                 </h2>
                                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Kami terbuka untuk berbagai bentuk kolaborasi yang sejalan dengan nilai dan arah pertumbuhan usaha. Untuk pengajuan kerjasama atau informasi lebih lanjut, silakan menghubungi kami melalui form yang tersedia di bagian kontak.
+                                        Kami terbuka untuk berbagai bentuk kolaborasi yang sejalan dengan nilai dan arah pertumbuhan usaha. Untuk pengajuan kerjasama atau informasi lebih lanjut, silakan meng kami melalui form yang tersedia di bagian konhubungitak.
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -275,7 +296,7 @@
     </main>
     
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-auto">
+    <footer class="text-white py-4 mt-auto">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
             <p class="mb-2 mb-md-0">&copy; 2026 Kopi Nusantara.</p>
             <div class="d-flex gap-3">
@@ -284,7 +305,7 @@
                 <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
-        <button id="btn-back-to-top" class="btn rounded-circle position-fixed shadow d-flex align-items-center justify-content-center" style="bottom: 20px; right: 20px; width: 45px; height: 45px; display: none; z-index: 1000; background-color: #7a4a2b; color: white; border: none;">
+        <button id="btn-back-to-top" class="btn rounded-circle position-fixed shadow d-flex align-items-center justify-content-center" style="bottom: 20px; right: 20px; width: 45px; height: 45px; display: none; z-index: 1000; background-color: white; color: black; border: none;">
             <i class="fas fa-arrow-up"></i>
         </button>
     </footer>
