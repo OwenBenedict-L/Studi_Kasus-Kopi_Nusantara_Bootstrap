@@ -192,6 +192,12 @@ $(document).ready(function(){
 
         $(this).trigger('reset');$('#char_count').text(`0/${maxChars}`);
     });
+
+    /* Navbar active link */
+    $('#navbarNav .nav-link').on('click', function () {
+        $('#navbarNav .nav-link').removeClass('active');
+        $(this).addClass('active');
+    });
 });
 
 /* Tombol ke atas */
