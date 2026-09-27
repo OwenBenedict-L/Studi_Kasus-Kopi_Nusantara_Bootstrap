@@ -195,15 +195,21 @@ $(document).ready(function(){
 });
 
 /* Tombol ke atas */
-$(window).scroll(function () {
+$(window).on('scroll', function () {
     if ($(this).scrollTop() > 300) {
-        $('#btn-back-to-top').fadeIn();
+        $('#btn-back-to-top').stop(true, false).fadeTo(150, 1);
     } else {
-        $('#btn-back-to-top').fadeOut();
+        $('#btn-back-to-top').stop(true, false).fadeTo(150, 0, function() {
+            $(this).hide();
+        });
     }
 });
 
-$('#btn-back-to-top').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 500);
-    return false;
+$('#btn-back-to-top').on('click', function (e) {
+    e.preventDefault();
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
