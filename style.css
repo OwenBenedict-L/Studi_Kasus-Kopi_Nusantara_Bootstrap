@@ -25,6 +25,21 @@ html {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
+/* Nav link hover & active state */
+.navbar-nav .nav-link {
+    transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    font-weight: 600;
+    color: #7a4a2b !important;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 700;
+    color: #4a2c11 !important;
+}
+
 /* Search Button */
 .search-input {
     width: 0;
@@ -165,6 +180,11 @@ html {
 
 .btn-qty:hover {
     background-color: #5c3a21;
+}
+
+/* Tips */
+#tips {
+    background-color: #dacfb8;
 }
 
 /* Contact */
